@@ -12,9 +12,11 @@ body{
     padding:20px;
 
     background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg");
-    background-size:cover;
+    background-size:contain;
+    background-repeat:no-repeat;
     background-position:center;
     background-attachment:fixed;
+    background-color:#000;
 }
 
 /* dark overlay */
@@ -29,7 +31,12 @@ body::before{
     z-index:-1;
 }
 
-h1{ color:white; font-size:34px; }
+h1{
+    color:white;
+    font-size:30px;
+    white-space:nowrap;
+}
+
 .sub{ color:white; }
 .tap{ color:white; margin-bottom:20px; }
 
@@ -39,7 +46,6 @@ h1{ color:white; font-size:34px; }
     transform:translateY(40px);
     animation:fadeUp 1s forwards;
 }
-
 @keyframes fadeUp{
     to{ opacity:1; transform:translateY(0); }
 }
@@ -49,26 +55,35 @@ h1{ color:white; font-size:34px; }
     width:90%;
     max-width:420px;
     border-radius:22px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.35);
+    box-shadow:0 15px 35px rgba(0,0,0,0.6);
     margin-top:25px;
 }
 
-/* colorful notes */
+/* FLOATING GLASS NOTES */
 .note{
     padding:18px;
-    margin:20px auto;
-    border-radius:20px;
+    margin:25px auto;
+    border-radius:25px;
     width:90%;
     max-width:420px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
     font-size:18px;
     line-height:1.6;
+    backdrop-filter: blur(10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+    animation: floatCard 4s ease-in-out infinite;
 }
 
-.note1{ background:#fff0f5; }
-.note2{ background:#f0fff4; }
-.note3{ background:#f0f7ff; }
-.note4{ background:#fff9e6; }
+@keyframes floatCard{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-8px); }
+    100%{ transform:translateY(0px); }
+}
+
+/* colorful notes */
+.note1{ background:rgba(255,192,203,0.85); }
+.note2{ background:rgba(173,255,204,0.85); }
+.note3{ background:rgba(173,216,255,0.85); }
+.note4{ background:rgba(255,239,170,0.9); }
 
 .footer{
     font-size:26px;
