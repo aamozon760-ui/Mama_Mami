@@ -9,36 +9,18 @@ body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
     text-align:center;
+    background: linear-gradient(#fff4cc,#ffe4a3);
     padding:20px;
-
-    background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-    background-attachment:fixed;
-    background-color:#000;
-}
-
-/* dark overlay */
-body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.35);
-    z-index:-1;
 }
 
 h1{
-    color:white;
-    font-size:30px;
+    color:#c79b00;
+    font-size:32px;
     white-space:nowrap;
 }
 
-.sub{ color:white; }
-.tap{ color:white; margin-bottom:20px; }
+.sub{ color:#7a5c00; }
+.tap{ margin-bottom:20px; }
 
 /* fade animation */
 .fade{
@@ -50,46 +32,54 @@ h1{
     to{ opacity:1; transform:translateY(0); }
 }
 
-/* photos */
 .photo{
     width:90%;
     max-width:420px;
     border-radius:22px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.6);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
     margin-top:25px;
 }
 
-/* FLOATING GLASS NOTES */
+/* colored notes (fully visible now) */
 .note{
     padding:18px;
-    margin:25px auto;
-    border-radius:25px;
+    margin:20px auto;
+    border-radius:20px;
     width:90%;
     max-width:420px;
     font-size:18px;
     line-height:1.6;
-    backdrop-filter: blur(10px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.5);
-    animation: floatCard 4s ease-in-out infinite;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
 
-@keyframes floatCard{
-    0%{ transform:translateY(0px); }
-    50%{ transform:translateY(-8px); }
-    100%{ transform:translateY(0px); }
+.note1{ background:#ffe4ec; }
+.note2{ background:#e4fff2; }
+.note3{ background:#e6f0ff; }
+.note4{ background:#fff3cd; }
+
+/* LAST IMAGE TEXT OVERLAY */
+.last-container{
+    position:relative;
+    width:90%;
+    max-width:420px;
+    margin:30px auto;
 }
 
-/* colorful notes */
-.note1{ background:rgba(255,192,203,0.85); }
-.note2{ background:rgba(173,255,204,0.85); }
-.note3{ background:rgba(173,216,255,0.85); }
-.note4{ background:rgba(255,239,170,0.9); }
+.last-container img{
+    width:100%;
+    border-radius:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
 
-.footer{
+.last-text{
+    position:absolute;
+    bottom:15px;
+    left:0;
+    right:0;
+    color:white;
     font-size:26px;
     font-weight:bold;
-    color:white;
-    margin-top:30px;
+    text-shadow:0 0 10px black;
 }
 </style>
 </head>
@@ -130,17 +120,16 @@ for the entire family ✨
 We are blessed to learn from you.
 </div>
 
-<img class="photo fade" style="animation-delay:7s"
-src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.58%20AM.jpeg">
-
-<div class="note note4 fade" style="animation-delay:8s">
+<div class="note note4 fade" style="animation-delay:7s">
 Wishing you many more years  
 of good health, happiness  
 and endless smiles 💕
 </div>
 
-<div class="footer fade" style="animation-delay:9s">
-Forever Together 💛
+<!-- LAST PHOTO WITH TEXT -->
+<div class="last-container fade" style="animation-delay:8s">
+    <img src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg">
+    <div class="last-text">Forever Together 💛</div>
 </div>
 
 <script>
