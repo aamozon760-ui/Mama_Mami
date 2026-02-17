@@ -13,6 +13,7 @@ body{
     font-family: 'Segoe UI', sans-serif;
     text-align:center;
     padding:20px;
+    overflow-x:hidden;
 
     background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2012.34.25%20PM.jpeg");
     background-size:cover;
@@ -36,8 +37,9 @@ h1{
     font-family: 'Great Vibes', cursive;
     color:white;
     font-size:48px;
-    margin-top:-10px;   /* moves title slightly upward */
+    margin-top:-10px;
     margin-bottom:5px;
+    text-shadow:0 0 15px rgba(255,255,255,0.7);
 }
 
 .sub{
@@ -48,6 +50,7 @@ h1{
     text-shadow:0 0 8px rgba(0,0,0,0.6);
 }
 
+/* fade animation */
 .fade{
     opacity:0;
     transform:translateY(40px);
@@ -57,6 +60,7 @@ h1{
     to{ opacity:1; transform:translateY(0); }
 }
 
+/* floating music button */
 .tapFloating{
     position:fixed;
     bottom:20px;
@@ -78,6 +82,21 @@ h1{
     100%{ transform:translateX(-50%) translateY(0); }
 }
 
+/* family names card */
+.noteNames{
+    background: linear-gradient(45deg,#fff1c1,#ffe4a3);
+    color:#7a5c00;
+    font-weight:bold;
+    font-size:14px;
+    padding:10px 14px;
+    border-radius:20px;
+    width:fit-content;
+    margin:10px auto;
+    white-space:nowrap;
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* photos */
 .photo{
     width:90%;
     max-width:420px;
@@ -86,21 +105,7 @@ h1{
     margin-top:25px;
 }
 
-.noteNames{
-    background: linear-gradient(45deg,#fff1c1,#ffe4a3);
-    color:#7a5c00;
-    font-weight:bold;
-    font-size:15px;      /* slightly smaller */
-    white-space:nowrap;  /* force single line */
-    padding:10px;
-    border-radius:20px;
-    width:90%;
-    max-width:420px;
-    margin:auto;
-}
-
-
-/* DIFFERENT NOTE STYLES */
+/* notes styles */
 .note{
     padding:18px;
     margin:22px auto;
@@ -112,22 +117,10 @@ h1{
     box-shadow:0 12px 25px rgba(0,0,0,0.35);
 }
 
-.note1{
-    background:linear-gradient(45deg,#ffd1dc,#ffe4ec);
-    transform:rotate(-1deg);
-}
-.note2{
-    background:linear-gradient(45deg,#d4ffe5,#eafff3);
-    transform:rotate(1deg);
-}
-.note3{
-    background:linear-gradient(45deg,#d6e9ff,#edf6ff);
-    transform:rotate(-1deg);
-}
-.note4{
-    background:linear-gradient(45deg,#ffe9a3,#fff4cc);
-    transform:rotate(1deg);
-}
+.note1{ background:linear-gradient(45deg,#ffd1dc,#ffe4ec); transform:rotate(-1deg);}
+.note2{ background:linear-gradient(45deg,#d4ffe5,#eafff3); transform:rotate(1deg);}
+.note3{ background:linear-gradient(45deg,#d6e9ff,#edf6ff); transform:rotate(-1deg);}
+.note4{ background:linear-gradient(45deg,#ffe9a3,#fff4cc); transform:rotate(1deg);}
 
 .closing{
     width:90%;
@@ -141,10 +134,30 @@ h1{
     color:#7a0000;
     box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
+
+/* FLOATING HEARTS */
+.hearts{
+    position:fixed;
+    bottom:-10px;
+    width:100%;
+    pointer-events:none;
+}
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    font-size:20px;
+    animation:floatUp 6s linear infinite;
+}
+@keyframes floatUp{
+    0%{transform:translateY(0); opacity:1;}
+    100%{transform:translateY(-110vh); opacity:0;}
+}
 </style>
 </head>
 
 <body>
+
+<div class="hearts"></div>
 
 <audio id="bgmusic" loop>
   <source src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/happy-anniversary-mama-mami-family-anniversary-song-wishvibes-special-48kbps_dfl3dSK0.mp3" type="audio/mp3">
@@ -153,7 +166,7 @@ h1{
 <h1>Happy 50th Anniversary 💛</h1>
 
 <div class="family noteNames fade" style="animation-delay:0.5s">
-Vinita • Sunita • Rekha • Shikha • Ragini • Sarika
+Vinita • Sunita • Rekha • Shikha • Meenu • Ragini • Sarika
 </div>
 
 <p class="sub">Golden Jubilee Celebration</p>
@@ -203,6 +216,18 @@ and endless smiles 💕
 document.body.addEventListener("click", function() {
   document.getElementById("bgmusic").play();
 });
+
+// floating hearts generator
+setInterval(function(){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+10)+"px";
+  heart.style.animationDuration=(Math.random()*3+3)+"s";
+  document.querySelector(".hearts").appendChild(heart);
+  setTimeout(()=>{heart.remove();},6000);
+},500);
 </script>
 
 </body>
