@@ -9,47 +9,71 @@ body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
     text-align:center;
-    background: linear-gradient(#fff4cc,#ffe4a3);
     padding:20px;
+
+    background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
-h1{
-    color:#c79b00;
-    font-size:34px;
+/* dark overlay */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.35);
+    z-index:-1;
 }
 
-.sub{
-    color:#7a5c00;
+h1{ color:white; font-size:34px; }
+.sub{ color:white; }
+.tap{ color:white; margin-bottom:20px; }
+
+/* fade animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1s forwards;
 }
 
-.tap{
-    margin-bottom:20px;
+@keyframes fadeUp{
+    to{ opacity:1; transform:translateY(0); }
 }
 
+/* photos */
 .photo{
     width:90%;
     max-width:420px;
     border-radius:22px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    margin-top:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.35);
+    margin-top:25px;
 }
 
+/* colorful notes */
 .note{
-    background:white;
     padding:18px;
     margin:20px auto;
     border-radius:20px;
     width:90%;
     max-width:420px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
     font-size:18px;
     line-height:1.6;
 }
 
+.note1{ background:#fff0f5; }
+.note2{ background:#f0fff4; }
+.note3{ background:#f0f7ff; }
+.note4{ background:#fff9e6; }
+
 .footer{
     font-size:26px;
     font-weight:bold;
-    color:#c79b00;
+    color:white;
     margin-top:30px;
 }
 </style>
@@ -57,7 +81,6 @@ h1{
 
 <body>
 
-<!-- MUSIC -->
 <audio id="bgmusic" loop>
   <source src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/happy-anniversary-mama-mami-family-anniversary-song-wishvibes-special-48kbps_dfl3dSK0.mp3" type="audio/mp3">
 </audio>
@@ -66,38 +89,42 @@ h1{
 <p class="sub">Golden Jubilee Celebration</p>
 <p class="tap">🔊 Tap anywhere to play music</p>
 
-<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
+<img class="photo fade" style="animation-delay:1s"
+src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
 
-<div class="note">
+<div class="note note1 fade" style="animation-delay:2s">
 50 years ago, a beautiful journey began 💛  
 A journey of love, patience and togetherness.
 </div>
 
-<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.21.11%20AM.jpeg">
+<img class="photo fade" style="animation-delay:3s"
+src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.21.11%20AM.jpeg">
 
-<div class="note">
+<div class="note note2 fade" style="animation-delay:4s">
 Through ups and downs,  
 you always stood by each other 🤍  
 That is true love.
 </div>
 
-<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.57%20AM.jpeg">
+<img class="photo fade" style="animation-delay:5s"
+src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.57%20AM.jpeg">
 
-<div class="note">
+<div class="note note3 fade" style="animation-delay:6s">
 Your bond is an inspiration  
 for the entire family ✨  
 We are blessed to learn from you.
 </div>
 
-<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.58%20AM.jpeg">
+<img class="photo fade" style="animation-delay:7s"
+src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.58%20AM.jpeg">
 
-<div class="note">
+<div class="note note4 fade" style="animation-delay:8s">
 Wishing you many more years  
 of good health, happiness  
 and endless smiles 💕
 </div>
 
-<div class="footer">
+<div class="footer fade" style="animation-delay:9s">
 Forever Together 💛
 </div>
 
