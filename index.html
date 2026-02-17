@@ -4,25 +4,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golden Jubilee Anniversary</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
     text-align:center;
-    background: linear-gradient(#fff4cc,#ffe4a3);
     padding:20px;
+
+    background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2012.34.25%20PM.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* overlay */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.35);
+    z-index:-1;
 }
 
 h1{
-    color:#c79b00;
-    font-size:32px;
-    white-space:nowrap;
+    font-family: 'Great Vibes', cursive;
+    color:white;
+    font-size:48px;
+    margin-bottom:5px;
 }
 
-.sub{ color:#7a5c00; }
-.tap{ margin-bottom:20px; }
+.names{
+    color:white;
+    margin-bottom:15px;
+}
 
-/* fade animation */
+.sub{ color:white; }
+.tap{ color:white; margin-bottom:20px; }
+
+/* animation */
 .fade{
     opacity:0;
     transform:translateY(40px);
@@ -36,11 +60,10 @@ h1{
     width:90%;
     max-width:420px;
     border-radius:22px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
     margin-top:25px;
 }
 
-/* colored notes (fully visible now) */
 .note{
     padding:18px;
     margin:20px auto;
@@ -49,7 +72,7 @@ h1{
     max-width:420px;
     font-size:18px;
     line-height:1.6;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .note1{ background:#ffe4ec; }
@@ -57,29 +80,10 @@ h1{
 .note3{ background:#e6f0ff; }
 .note4{ background:#fff3cd; }
 
-/* LAST IMAGE TEXT OVERLAY */
-.last-container{
-    position:relative;
-    width:90%;
-    max-width:420px;
-    margin:30px auto;
-}
-
-.last-container img{
-    width:100%;
-    border-radius:22px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
-
-.last-text{
-    position:absolute;
-    bottom:15px;
-    left:0;
-    right:0;
+.footer{
     color:white;
-    font-size:26px;
-    font-weight:bold;
-    text-shadow:0 0 10px black;
+    font-size:22px;
+    margin-top:20px;
 }
 </style>
 </head>
@@ -91,6 +95,7 @@ h1{
 </audio>
 
 <h1>Happy 50th Anniversary 💛</h1>
+<div class="names">Vinita • Sunita • Rekha • Shikha • Ragini • Sarika</div>
 <p class="sub">Golden Jubilee Celebration</p>
 <p class="tap">🔊 Tap anywhere to play music</p>
 
@@ -120,16 +125,18 @@ for the entire family ✨
 We are blessed to learn from you.
 </div>
 
-<div class="note note4 fade" style="animation-delay:7s">
-Wishing you many more years  
-of good health, happiness  
+<!-- LAST PHOTO ABOVE LAST NOTE -->
+<img class="photo fade" style="animation-delay:7s"
+src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg">
+
+<div class="note note4 fade" style="animation-delay:8s">
+Wishing you many more years of good health, happiness  
 and endless smiles 💕
 </div>
 
-<!-- LAST PHOTO WITH TEXT -->
-<div class="last-container fade" style="animation-delay:8s">
-    <img src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg">
-    <div class="last-text">Forever Together 💛</div>
+<div class="footer fade" style="animation-delay:9s">
+आपका आशीर्वाद बना रहे मामा 🙏 <br>
+जय जिनेन्द्र
 </div>
 
 <script>
