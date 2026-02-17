@@ -5,6 +5,7 @@
 <title>Golden Jubilee Anniversary</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -38,15 +39,14 @@ h1{
     margin-bottom:5px;
 }
 
-.names{
-    color:white;
-    margin-bottom:15px;
+.sub{
+    font-family:'Playfair Display', serif;
+    color:#ffe9a3;
+    font-size:22px;
+    letter-spacing:1px;
+    text-shadow:0 0 8px rgba(0,0,0,0.6);
 }
 
-.sub{ color:white; }
-.tap{ color:white; margin-bottom:20px; }
-
-/* animation */
 .fade{
     opacity:0;
     transform:translateY(40px);
@@ -55,6 +55,7 @@ h1{
 @keyframes fadeUp{
     to{ opacity:1; transform:translateY(0); }
 }
+
 .tapFloating{
     position:fixed;
     bottom:20px;
@@ -83,37 +84,50 @@ h1{
     box-shadow:0 10px 25px rgba(0,0,0,0.3);
     margin-top:25px;
 }
+
 .noteNames{
     background: linear-gradient(45deg,#fff1c1,#ffe4a3);
     color:#7a5c00;
     font-weight:bold;
     font-size:16px;
-    white-space:nowrap;   /* keeps in one line */
-    overflow-x:auto;      /* allows tiny scroll if needed */
+    white-space:nowrap;
+    overflow-x:auto;
+    padding:10px;
+    border-radius:20px;
+    width:90%;
+    max-width:420px;
+    margin:auto;
 }
 
-
+/* DIFFERENT NOTE STYLES */
 .note{
     padding:18px;
-    margin:20px auto;
-    border-radius:20px;
+    margin:22px auto;
+    border-radius:22px;
     width:90%;
     max-width:420px;
     font-size:18px;
     line-height:1.6;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    box-shadow:0 12px 25px rgba(0,0,0,0.35);
 }
 
-.note1{ background:#ffe4ec; }
-.note2{ background:#e4fff2; }
-.note3{ background:#e6f0ff; }
-.note4{ background:#fff3cd; }
-
-.footer{
-    color:white;
-    font-size:22px;
-    margin-top:20px;
+.note1{
+    background:linear-gradient(45deg,#ffd1dc,#ffe4ec);
+    transform:rotate(-1deg);
 }
+.note2{
+    background:linear-gradient(45deg,#d4ffe5,#eafff3);
+    transform:rotate(1deg);
+}
+.note3{
+    background:linear-gradient(45deg,#d6e9ff,#edf6ff);
+    transform:rotate(-1deg);
+}
+.note4{
+    background:linear-gradient(45deg,#ffe9a3,#fff4cc);
+    transform:rotate(1deg);
+}
+
 .closing{
     width:90%;
     max-width:420px;
@@ -136,9 +150,13 @@ h1{
 </audio>
 
 <h1>Happy 50th Anniversary 💛</h1>
+
 <div class="family noteNames fade" style="animation-delay:0.5s">
 Vinita • Sunita • Rekha • Shikha • Ragini • Sarika
-</div><p class="sub">Golden Jubilee Celebration</p>
+</div>
+
+<p class="sub">Golden Jubilee Celebration</p>
+
 <div class="tapFloating">🔊 Tap anywhere to play music</div>
 
 <img class="photo fade" style="animation-delay:1s"
@@ -167,7 +185,6 @@ for the entire family ✨
 We are blessed to learn from you.
 </div>
 
-<!-- LAST PHOTO ABOVE LAST NOTE -->
 <img class="photo fade" style="animation-delay:7s"
 src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg">
 
@@ -180,7 +197,6 @@ and endless smiles 💕
 आपका आशीर्वाद बना रहे मामा मामी 🙏 <br>
 जय जिनेन्द्र
 </div>
-
 
 <script>
 document.body.addEventListener("click", function() {
