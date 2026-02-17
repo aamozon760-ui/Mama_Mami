@@ -20,7 +20,10 @@ h1{
 
 .sub{
     color:#7a5c00;
-    margin-bottom:25px;
+}
+
+.tap{
+    margin-bottom:20px;
 }
 
 .photo{
@@ -54,8 +57,14 @@ h1{
 
 <body>
 
+<!-- MUSIC -->
+<audio id="bgmusic" loop>
+  <source src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/happy-anniversary-mama-mami-family-anniversary-song-wishvibes-special-48kbps_dfl3dSK0.mp3" type="audio/mp3">
+</audio>
+
 <h1>Happy 50th Anniversary 💛</h1>
 <p class="sub">Golden Jubilee Celebration</p>
+<p class="tap">🔊 Tap anywhere to play music</p>
 
 <img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
 
@@ -91,6 +100,12 @@ and endless smiles 💕
 <div class="footer">
 Forever Together 💛
 </div>
+
+<script>
+document.body.addEventListener("click", function() {
+  document.getElementById("bgmusic").play();
+});
+</script>
 
 </body>
 </html>
