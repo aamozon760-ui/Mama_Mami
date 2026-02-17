@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Jubilee Anniversary</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align:center;
+    background: linear-gradient(#fff4cc,#ffe4a3);
+    padding:20px;
+}
+
+h1{
+    color:#c79b00;
+    font-size:34px;
+}
+
+.sub{
+    color:#7a5c00;
+    margin-bottom:25px;
+}
+
+.slider{
+    width:90%;
+    max-width:420px;
+    margin:auto;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.slider img{
+    width:100%;
+    display:none;
+}
+
+.message{
+    background:white;
+    padding:18px;
+    margin:25px auto;
+    border-radius:20px;
+    width:90%;
+    max-width:420px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    font-size:18px;
+    line-height:1.6;
+}
+
+.footer{
+    font-size:24px;
+    font-weight:bold;
+    color:#c79b00;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy 50th Anniversary to Mamaji and Mamiji 💛</h1>
+<p class="sub">Golden Jubilee Celebration</p>
+
+<div class="slider">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+</div>
+
+<div class="message">
+50 years of love, laughter and togetherness 💕  
+Your journey together is an inspiration for all of us.  
+
+Wishing you many more beautiful years filled with  
+health, happiness and love ✨
+</div>
+
+<div class="footer">
+Forever Together 💛
+</div>
+
+<script>
+let index=0;
+const slides=document.querySelectorAll(".slider img");
+slides[0].style.display="block";
+
+setInterval(()=>{
+slides[index].style.display="none";
+index=(index+1)%slides.length;
+slides[index].style.display="block";
+},2500);
+</script>
+
+</body>
+</html>
