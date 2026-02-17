@@ -23,98 +23,74 @@ h1{
     margin-bottom:25px;
 }
 
-.slider{
+.photo{
     width:90%;
     max-width:420px;
-    margin:auto;
-    border-radius:25px;
-    overflow:hidden;
+    border-radius:22px;
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
-}
-
-.slide{
-    display:none;
-}
-
-.slide img{
-    width:100%;
+    margin-top:20px;
 }
 
 .note{
     background:white;
-    padding:16px;
-    font-size:17px;
+    padding:18px;
+    margin:20px auto;
+    border-radius:20px;
+    width:90%;
+    max-width:420px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    font-size:18px;
     line-height:1.6;
 }
 
 .footer{
-    margin-top:25px;
-    font-size:24px;
+    font-size:26px;
     font-weight:bold;
     color:#c79b00;
+    margin-top:30px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Happy 50th Anniversary Mamaji and Mamiji 💛</h1>
+<h1>Happy 50th Anniversary 💛</h1>
 <p class="sub">Golden Jubilee Celebration</p>
 
-<div class="slider">
+<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
 
-    <div class="slide">
-        <img src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
-        <div class="note">
-            50 years ago, a beautiful journey began 💛  
-            A journey of love, patience and togetherness.
-        </div>
-    </div>
+<div class="note">
+50 years ago, a beautiful journey began 💛  
+A journey of love, patience and togetherness.
+</div>
 
-    <div class="slide">
-        <img src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.21.11%20AM.jpeg">
-        <div class="note">
-            Through ups and downs,  
-            you always stood by each other 🤍  
-            That is true love.
-        </div>
-    </div>
+<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.21.11%20AM.jpeg">
 
-    <div class="slide">
-        <img src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.57%20AM.jpeg">
-        <div class="note">
-            Your bond is an inspiration  
-            for the entire family ✨  
-            We are blessed to learn from you.
-        </div>
-    </div>
+<div class="note">
+Through ups and downs,  
+you always stood by each other 🤍  
+That is true love.
+</div>
 
-    <div class="slide">
-        <img src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.58%20AM.jpeg">
-        <div class="note">
-            Wishing you many more years  
-            of good health, happiness  
-            and endless smiles 💕
-        </div>
-    </div>
+<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.57%20AM.jpeg">
 
+<div class="note">
+Your bond is an inspiration  
+for the entire family ✨  
+We are blessed to learn from you.
+</div>
+
+<img class="photo" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.58%20AM.jpeg">
+
+<div class="note">
+Wishing you many more years  
+of good health, happiness  
+and endless smiles 💕
 </div>
 
 <div class="footer">
 Forever Together 💛
 </div>
-
-<script>
-let index = 0;
-const slides = document.querySelectorAll(".slide");
-slides[0].style.display = "block";
-
-setInterval(() => {
-    slides[index].style.display = "none";
-    index = (index + 1) % slides.length;
-    slides[index].style.display = "block";
-}, 3000);
-</script>
 
 </body>
 </html>
