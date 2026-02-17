@@ -55,6 +55,26 @@ h1{
 @keyframes fadeUp{
     to{ opacity:1; transform:translateY(0); }
 }
+.tapFloating{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:linear-gradient(45deg,#ff9a9e,#ffd166);
+    color:#7a0000;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    animation:floatBtn 2s ease-in-out infinite;
+    z-index:999;
+}
+
+@keyframes floatBtn{
+    0%{ transform:translateX(-50%) translateY(0); }
+    50%{ transform:translateX(-50%) translateY(-8px); }
+    100%{ transform:translateX(-50%) translateY(0); }
+}
 
 .photo{
     width:90%;
@@ -67,8 +87,11 @@ h1{
     background: linear-gradient(45deg,#fff1c1,#ffe4a3);
     color:#7a5c00;
     font-weight:bold;
-    font-size:18px;
+    font-size:16px;
+    white-space:nowrap;   /* keeps in one line */
+    overflow-x:auto;      /* allows tiny scroll if needed */
 }
+
 
 .note{
     padding:18px;
@@ -116,7 +139,7 @@ h1{
 <div class="family noteNames fade" style="animation-delay:0.5s">
 Vinita • Sunita • Rekha • Shikha • Ragini • Sarika
 </div><p class="sub">Golden Jubilee Celebration</p>
-<p class="tap">🔊 Tap anywhere to play music</p>
+<div class="tapFloating">🔊 Tap anywhere to play music</div>
 
 <img class="photo fade" style="animation-delay:1s"
 src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
