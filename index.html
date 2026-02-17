@@ -14,7 +14,6 @@ body{
     text-align:center;
     padding:20px;
     overflow-x:hidden;
-
     background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2012.34.25%20PM.jpeg");
     background-size:cover;
     background-position:center;
@@ -34,7 +33,7 @@ body::before{
 }
 
 h1{
-    font-family: 'Great Vibes', cursive;
+    font-family:'Great Vibes', cursive;
     color:white;
     font-size:48px;
     margin-top:-10px;
@@ -46,7 +45,6 @@ h1{
     font-family:'Playfair Display', serif;
     color:#ffe9a3;
     font-size:22px;
-    letter-spacing:1px;
     text-shadow:0 0 8px rgba(0,0,0,0.6);
 }
 
@@ -72,19 +70,42 @@ h1{
     border-radius:30px;
     font-weight:bold;
     box-shadow:0 8px 20px rgba(0,0,0,0.3);
-    animation:floatBtn 2s ease-in-out infinite;
+    animation:floatBtn 2s infinite;
     z-index:999;
 }
-
 @keyframes floatBtn{
-    0%{ transform:translateX(-50%) translateY(0); }
-    50%{ transform:translateX(-50%) translateY(-8px); }
-    100%{ transform:translateX(-50%) translateY(0); }
+    0%,100%{ transform:translate(-50%,0);}
+    50%{ transform:translate(-50%,-8px);}
 }
 
-/* family names card */
+/* scroll hint */
+.scrollHint{
+    position:fixed;
+    top:90px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(255,255,255,0.9);
+    color:#7a0000;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+    animation:bounce 1.5s infinite;
+    z-index:999;
+}
+@keyframes bounce{
+    0%,100%{ transform:translate(-50%,0);}
+    50%{ transform:translate(-50%,8px);}
+}
+
+/* floating hearts */
+.hearts{position:fixed;bottom:-10px;width:100%;pointer-events:none;}
+.heart{position:absolute;color:#ff4d6d;font-size:20px;animation:floatUp 6s linear infinite;}
+@keyframes floatUp{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(-110vh);opacity:0;}}
+
+/* names card */
 .noteNames{
-    background: linear-gradient(45deg,#fff1c1,#ffe4a3);
+    background:linear-gradient(45deg,#fff1c1,#ffe4a3);
     color:#7a5c00;
     font-weight:bold;
     font-size:14px;
@@ -93,7 +114,6 @@ h1{
     width:fit-content;
     margin:10px auto;
     white-space:nowrap;
-    box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* photos */
@@ -106,51 +126,15 @@ h1{
 }
 
 /* notes styles */
-.note{
-    padding:18px;
-    margin:22px auto;
-    border-radius:22px;
-    width:90%;
-    max-width:420px;
-    font-size:18px;
-    line-height:1.6;
-    box-shadow:0 12px 25px rgba(0,0,0,0.35);
-}
-
-.note1{ background:linear-gradient(45deg,#ffd1dc,#ffe4ec); transform:rotate(-1deg);}
-.note2{ background:linear-gradient(45deg,#d4ffe5,#eafff3); transform:rotate(1deg);}
-.note3{ background:linear-gradient(45deg,#d6e9ff,#edf6ff); transform:rotate(-1deg);}
-.note4{ background:linear-gradient(45deg,#ffe9a3,#fff4cc); transform:rotate(1deg);}
+.note{padding:18px;margin:22px auto;border-radius:22px;width:90%;max-width:420px;font-size:18px;line-height:1.6;box-shadow:0 12px 25px rgba(0,0,0,0.35);}
+.note1{background:linear-gradient(45deg,#ffd1dc,#ffe4ec);transform:rotate(-1deg);}
+.note2{background:linear-gradient(45deg,#d4ffe5,#eafff3);transform:rotate(1deg);}
+.note3{background:linear-gradient(45deg,#d6e9ff,#edf6ff);transform:rotate(-1deg);}
+.note4{background:linear-gradient(45deg,#ffe9a3,#fff4cc);transform:rotate(1deg);}
 
 .closing{
-    width:90%;
-    max-width:420px;
-    margin:25px auto;
-    padding:20px;
-    border-radius:25px;
-    font-size:22px;
-    font-weight:bold;
-    background: linear-gradient(45deg,#ff9a9e,#fad0c4,#ffd166);
-    color:#7a0000;
-    box-shadow:0 15px 30px rgba(0,0,0,0.3);
-}
-
-/* FLOATING HEARTS */
-.hearts{
-    position:fixed;
-    bottom:-10px;
-    width:100%;
-    pointer-events:none;
-}
-.heart{
-    position:absolute;
-    color:#ff4d6d;
-    font-size:20px;
-    animation:floatUp 6s linear infinite;
-}
-@keyframes floatUp{
-    0%{transform:translateY(0); opacity:1;}
-    100%{transform:translateY(-110vh); opacity:0;}
+    width:90%;max-width:420px;margin:25px auto;padding:20px;border-radius:25px;font-size:22px;font-weight:bold;
+    background:linear-gradient(45deg,#ff9a9e,#fad0c4,#ffd166);color:#7a0000;box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -172,17 +156,16 @@ Vinita • Sunita • Rekha • Shikha • Meenu • Ragini • Sarika
 <p class="sub">Golden Jubilee Celebration</p>
 
 <div class="tapFloating">🔊 Tap anywhere to play music</div>
+<div class="scrollHint">⬇ Scroll Down ⬇</div>
 
-<img class="photo fade" style="animation-delay:1s"
-src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
+<img class="photo fade" style="animation-delay:1s" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.20.24%20AM.jpeg">
 
 <div class="note note1 fade" style="animation-delay:2s">
 50 years ago, a beautiful journey began 💛  
 A journey of love, patience and togetherness.
 </div>
 
-<img class="photo fade" style="animation-delay:3s"
-src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.21.11%20AM.jpeg">
+<img class="photo fade" style="animation-delay:3s" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.21.11%20AM.jpeg">
 
 <div class="note note2 fade" style="animation-delay:4s">
 Through ups and downs,  
@@ -190,8 +173,7 @@ you always stood by each other 🤍
 That is true love.
 </div>
 
-<img class="photo fade" style="animation-delay:5s"
-src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.57%20AM.jpeg">
+<img class="photo fade" style="animation-delay:5s" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.26.57%20AM.jpeg">
 
 <div class="note note3 fade" style="animation-delay:6s">
 Your bond is an inspiration  
@@ -199,8 +181,7 @@ for the entire family ✨
 We are blessed to learn from you.
 </div>
 
-<img class="photo fade" style="animation-delay:7s"
-src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg">
+<img class="photo fade" style="animation-delay:7s" src="https://raw.githubusercontent.com/aamozon760-ui/Mama_Mami/main/WhatsApp%20Image%202026-02-17%20at%2011.58.53%20AM.jpeg">
 
 <div class="note note4 fade" style="animation-delay:8s">
 Wishing you many more years of good health, happiness  
@@ -213,21 +194,9 @@ and endless smiles 💕
 </div>
 
 <script>
-document.body.addEventListener("click", function() {
-  document.getElementById("bgmusic").play();
-});
-
-// floating hearts generator
-setInterval(function(){
-  const heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=(Math.random()*20+10)+"px";
-  heart.style.animationDuration=(Math.random()*3+3)+"s";
-  document.querySelector(".hearts").appendChild(heart);
-  setTimeout(()=>{heart.remove();},6000);
-},500);
+document.body.addEventListener("click",()=>{document.getElementById("bgmusic").play();});
+setInterval(()=>{const h=document.createElement("div");h.className="heart";h.innerHTML="❤";h.style.left=Math.random()*100+"vw";h.style.fontSize=(Math.random()*20+10)+"px";h.style.animationDuration=(Math.random()*3+3)+"s";document.querySelector(".hearts").appendChild(h);setTimeout(()=>{h.remove();},6000);},500);
+window.addEventListener("scroll",()=>{document.querySelector(".scrollHint").style.display="none";});
 </script>
 
 </body>
